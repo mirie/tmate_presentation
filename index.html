@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>tmate!</title>
+
+  <meta name="description" content="A quick presentation on tmate">
+  <meta name="author" content="Mai Irie">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+  <link rel="stylesheet" href="css/tmate.css">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <!-- Title -->
+    <section>
+      <h1>tmate</h1>
+      <h3>A cool tool for terminal sharing</h3>
+      <p>
+        <small>By <a href="http://maiirie.com">Mai Irie</a> / <a href="https://www.drupal.org/u/mirie">mirie on d.o.</a></small>
+      </p>
+    </section>
+
+    <section>
+      <h2>Hi! I'm Mai.</h2>
+      <p>
+        <img class="photo" src="/images/mirie.png" />
+      </p>
+    </section>
+
+    <!-- About Me Slides -->
+    <section>
+      <h2>I'm a senior developer</h2>
+      <h3>@ Phase2 Technology</h3>
+      <p>
+        <img class="clean" src="/images/p2_logo_reverse.png" />
+      </p>
+    </section>
+
+    <section>
+      <h2>Robbie Holmes</h2>
+      <p><strong>robbiethegeek</strong></p>
+      <p>Director of Engineering @ Phase2</p>
+      <p>
+        <img class="photo smaller" src="/images/robbie.png" />
+      </p>
+      <aside class="notes">
+        And I’m going to share with you what Robbie Holmes, or as he’s known everywhere as robbiethegeek, shared with me when we were chatting about pair programming some time ago.
+
+        I’m certainly not a tmate expert but I thought it was pretty neat.
+      </aside>
+    </section>
+
+    <!-- The Problem -->
+    <section data-background="#f44734">
+      <h1>The Problem</h1>
+
+      <aside class="notes">
+        So I’m sure many of you have experienced this type of problem before when developing.
+      </aside>
+    </section>
+
+    <section>
+      <section data-background="#f7f2d3">
+        <h3 class="dark">Devs happily coding and working together on a team</h3>
+        <div>
+          <img class="clean left" src="images/c_happy_coder_circle.png" />
+          <img class="clean right" src="images/mai_happy_coder_circle.png" />
+        </div>
+
+        <aside class="notes">
+          Ok, so we have two devs on our team. Look at them, they are both happily coding away.
+        </aside>
+      </section>
+
+      <section data-background="#e9dc86">
+        <h2 class="dark">Hrm, we've got an issue</h2>
+
+        <p>
+          <img class="clean" src="images/c_furrowed_circle.png" />
+        </p>
+
+        <aside class="notes">
+          uh-oh, one of our Dev’s has an issue.
+        </aside>
+      </section>
+
+      <section data-background="#af9d28">
+        <p>
+          <img class="clean" src="images/chat1_combined.png" />
+        </p>
+      </section>
+
+      <section data-background="#7d701c">
+        <p>
+          <img class="clean" src="images/chat2_combined.png" />
+        </p>
+      </section>
+
+      <section data-background="#433c0f">
+        <p>
+          <img class="clean" src="images/chat3_combined.png" />
+        </p>
+      </section>
+
+      <section  data-background="#211e07">
+        <p>
+          <img class="clean" src="images/chat4_combined.png" />
+        </p>
+
+        <aside class="notes">
+          And then it’s time to escalate this trouble-shooting to a hangout, or whatever kind of meeting that allows screensharing.
+        </aside>
+      </section>
+
+      <section data-background="#f44734">
+        <p>
+          <img class="clean" src="images/chat5_adjusted.png" />
+        </p>
+
+        <aside class="notes">
+          Sigh...
+        </aside>
+      </section>
+
+      <section data-background="http://i.imgur.com/GgGuUyl.gif">
+        <aside class="notes">
+          It's so hard to read and troubleshoot.
+        </aside>
+      </section>
+
+      <section data-background="https://media.giphy.com/media/lJNoBCvQYp7nq/giphy.gif">
+        <aside class="notes">
+          At this point, you really just want to type it out yourself rather than dictating and squinting
+        </aside>
+      </section>
+
+      <section data-background="http://d.gr-assets.com/hostedimages/1395673610ra/9027290.gif">
+      </section>
+
+    </section>
+
+    <!-- About tmate -->
+    <section>
+      <h2>tmate to the rescue!</h2>
+      <img class="clean" src="images/tmux-logo-medium.png" />
+    </section>
+
+    <section>
+      <h2>What is tmate?</h2>
+      <aside class="notes">
+        tmate is a fork of tmux. tmate and tmux can coexist on the same system, they do not conflict with each other.
+
+        tmate will give you the power of sharing your terminal!
+      </aside>
+    </section>
+
+    <!-- Basic Usage -->
+    <section>
+      <h2>How to Use?</h2>
+
+      <img src="images/tmate_session_start.gif" />
+
+      <aside class="notes">
+        Once you have it installed, it's relatively simple to use. Since it's based on tmux, you can
+        use all tmux commands as well.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Sharing a Read/Write Session</h2>
+
+      <img src="images/tmate_show_messages.gif" />
+
+      <aside class="notes">
+        You can share a read only terminal or allow the user to also have write access.
+      </aside>
+    </section>
+
+    <section>
+      <h2>HTML5 Client</h2>
+
+      <p>There is an HTML Client in progress...</p>
+      <p class="fragment">However, the client has problems like the tmux key bindings don't work and there are some graphical bugs</p>
+      <p class="fragment">Plus...the whole point is terminal sharing...<strong style="color:#ff2c2d">so use a terminal!</strong></p>
+    </section>
+
+    <!-- Aside on Pair programming -->
+    <section data-background="#222222">
+      <h2>Other benefits</h2>
+      <p class="fragment">Terminal Sharing also opens the door for...</p>
+      <p class="fragment"><strong style="color:#00FDC8">Pair Programming!</strong></p>
+    </section>
+
+    <section data-background="#222222">
+      <h2>Remote Pair Programming</h2>
+      <p>Using tmate for remote pairing is straightforward</p>
+
+      <ol>
+        <li>Grab a good headset with a microphone</li>
+        <li>Jump on Google Hangouts, Skype, etc</li>
+        <li>Run tmate</li>
+        <li>Share a read/write session with your partner</li>
+        <li>Edit with vim</li>
+      </ol>
+    </section>
+
+    <!-- Installation -->
+    <section>
+      <h2>How to Install?</h2>
+
+      <h3>Mac OS X</h3>
+      <p>You need to have <a href="http://mxcl.github.io/homebrew/">Homebrew</a>
+        installed as a prerequisite.</p>
+
+      <pre>
+        <code class="hljs" data-trim contenteditable>
+brew update             &amp;&amp; \
+brew tap nviennot/tmate &amp;&amp; \
+brew install tmate
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>How to Install?</h2>
+      <h3>Ubuntu</h3>
+      <p>Ubuntu 12.04 and up have published packages for tmate.</p>
+
+      <pre>
+        <code class="hljs" data-trim contenteditable>
+sudo apt-get install software-properties-common &amp;&amp; \
+sudo add-apt-repository ppa:nviennot/tmate      &amp;&amp; \
+sudo apt-get update                             &amp;&amp; \
+sudo apt-get install tmate
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>How to Install?</h2>
+      <h3>From Source</h3>
+      <p>Grab the sources from github: <a href="https://github.com/nviennot/tmate">https://github.com/nviennot/tmate</a>.</p>
+      <p>A few dependencies are required. The Ubuntu packages names are:</p>
+      <p style="font-family: Consolas, Menlo, Monaco, monospace; font-size: smaller">git-core build-essential pkg-config libtool libevent-dev libncurses-dev zlib1g-dev automake libssh-dev cmake ruby</p>
+
+      <pre>
+        <code class="hljs" data-trim contenteditable>
+./autogen.sh &amp;&amp; \
+./configure  &amp;&amp; \
+make         &amp;&amp; \
+make install
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>How does it work?</h2>
+
+      <img src="images/tmate_arch.svg" />
+
+      <aside class="notes">
+        <ul>
+          <li>When launching tmate, an ssh connection is established to tmate.io (or your own server) in the background through libssh.</li>
+          <li>The client is authenticated with local ssh keys.</li>
+          <li>When a connection is established, a session token is generated, then a tmux server is spawned in a jail with no file system, with its own PID namespace to isolate the server from other processes, and no user privileges.</li>
+          <li>When your partner connects using the connection string, the tmux unix socket is looked up on the file system.</li>
+          <li>On lookup success, a tmux client is spawned and connected to the remote tmux server.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section data-background="#dd5313">
+      <h1>My connection goes thru <span style="text-decoration:underline;">tmate.io</span>???</h1>
+
+      <h2>My Shiz is secret...</h2>
+    </section>
+
+    <section>
+      <h2>You can host your own tmate server</h2>
+
+      <p>Code: <a href="https://github.com/nviennot/tmate-slave">https://github.com/nviennot/tmate-slave</a></p>
+
+      <p>tmate server has some package dependencies. Once those are installed on the server, you can install tmate-slave with:
+      <pre>
+        <code class="hljs" data-trim contenteditable>
+git clone https://github.com/nviennot/tmate-slave.git && cd tmate-slave
+./create_keys.sh # This will generate SSH keys, remember the keys fingerprints.
+./autogen.sh && ./configure && make
+sudo ./tmate-slave
+        </code>
+      </pre>
+
+      <p>...Set up the ~/.tmate.conf file</p>
+
+      <p>...And start your server with the following command:</p>
+
+      <pre>
+        <code class="hljs" data-trim contenteditable>
+tmate-slave [-k keys_dir] [-l logfile] [-p port] [-h host] [-v]
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Additional info on hosting your own tmate Server</h2>
+
+     <ul>
+       <li><a href="https://tmate.io/">https://tmate.io/</a></li>
+       <li>Docker instance: <a href="https://github.com/nicopace/tmate-docker">https://github.com/nicopace/tmate-docker</a></li>
+       <li>CentOS 6.5 install guide: <a href="https://github.com/nviennot/tmate-slave/wiki/How-to-Install-tmate-slave-on-CentOS-6.5">https://github.com/nviennot/tmate-slave/wiki/How-to-Install-tmate-slave-on-CentOS-6.5</a></li>
+       </li>
+     </ul>
+    </section>
+
+    <!-- Scenario revisted -->
+    <section>
+      <section data-background="#6295B4">
+        <h2>Our scenario revisited...</h2>
+      </section>
+
+      <section data-background="#e9dc86">
+        <p>
+          <img class="clean" src="images/chat1_combined.png" />
+        </p>
+
+        <aside class="notes">
+          Ok, back to when our dev was saying something wasn't working on his local dev environment.
+        </aside>
+      </section>
+
+      <section  data-background="#6295B4">
+        <p>
+          <img class="clean" src="images/chat6_adjusted.png" />
+        </p>
+
+        <aside class="notes">
+          You can still jump on a call but instead of sharing your screen, share your terminal instead!
+        </aside>
+      </section>
+
+      <section  data-background="#6295B4">
+        <p>
+          <img class="clean" src="images/tmate_success_edited.gif" />
+        </p>
+      </section>
+    </section>
+
+    <section data-background="http://data.whicdn.com/images/23846905/large.gif">
+    </section>
+
+    <section>
+      <h2>Additional Resources</h2>
+      <ul>
+        <li>github: <a href="https://github.com/nviennot/tmate">https://github.com/nviennot/tmate</a></li>
+        <li>IRC: #tmate (freenode)</li>
+        <li>Google Groups: <a href="https://groups.google.com/group/tmate-io.">https://groups.google.com/group/tmate-io</a></li>
+        <li>email: <a href="mailto:tmate-io@googlegroups.com">tmate-io@googlegroups.com</a></li>
+      </ul>
+    </section>
+
+    <section data-background="#3F3123">
+      <img style="margin:-9.75em 0" class="clean" src="images/cat.gif" />
+      <h2 style="margin:-.5em 0; background-color: #d33682; position:relative;">Thank you!</h2>
+    </section>
+  </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+
+</body>
+</html>

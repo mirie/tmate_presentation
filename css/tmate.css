@@ -1,0 +1,36 @@
+/*!
+ * Styles for tmate presentation.
+ */
+.photo {
+    width: 50%;
+}
+
+.photo.smaller {
+    width: 35%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+img.clean.left {
+    margin-left: 5%;
+}
+
+img.clean.right {
+    margin-right: 5%;
+}
+
+h2.dark, h3.dark {
+    color: #333;
+}
+
+.reveal section img.clean {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
